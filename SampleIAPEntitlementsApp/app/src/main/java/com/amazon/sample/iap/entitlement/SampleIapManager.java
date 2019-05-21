@@ -21,16 +21,15 @@ import com.amazon.device.iap.model.UserData;
  * <li>Enable/disable purchases from GUI</li>
  * <li>Save persistent order data into SQLite Database</li>
  * </ul>
- * 
- * 
  */
-public class SampleIapManager {
+public class SampleIapManager
+{
     /**
      * The EntitlementRecord class represents a Entitlement purchase record that
      * used by the Entitlement Sample App
-     * 
      */
-    public static class EntitlementRecord {
+    public static class EntitlementRecord
+    {
         public static final long DATE_NOT_SET = -1;
         private String receiptId;
         private String userId;
@@ -38,43 +37,53 @@ public class SampleIapManager {
         private long purchaseDate;
         private long cancelDate;
 
-        public long getCancelDate() {
+        public long getCancelDate()
+        {
             return cancelDate;
         }
 
-        public void setCancelDate(final long cancelDate) {
+        public void setCancelDate(final long cancelDate)
+        {
             this.cancelDate = cancelDate;
         }
 
-        public String getReceiptId() {
+        public String getReceiptId()
+        {
             return receiptId;
         }
 
-        public void setReceiptId(final String receiptId) {
+        public void setReceiptId(final String receiptId)
+        {
             this.receiptId = receiptId;
         }
 
-        public String getUserId() {
+        public String getUserId()
+        {
             return userId;
         }
 
-        public void setUserId(final String userId) {
+        public void setUserId(final String userId)
+        {
             this.userId = userId;
         }
 
-        public String getSku() {
+        public String getSku()
+        {
             return sku;
         }
 
-        public void setSku(final String sku) {
+        public void setSku(final String sku)
+        {
             this.sku = sku;
         }
 
-        public long getPurchaseDate() {
+        public long getPurchaseDate()
+        {
             return purchaseDate;
         }
 
-        public void setPurchaseDate(final long purchaseDate) {
+        public void setPurchaseDate(final long purchaseDate)
+        {
             this.purchaseDate = purchaseDate;
         }
 
@@ -87,7 +96,8 @@ public class SampleIapManager {
     private UserIapData userIapData;
     final private EntitlementsDataSource dataSource;
 
-    public SampleIapManager(final MainActivity mainActivity) {
+    public SampleIapManager(final MainActivity mainActivity)
+    {
         this.mainActivity = mainActivity;
         dataSource = new EntitlementsDataSource(mainActivity.getApplicationContext());
     }
@@ -95,20 +105,24 @@ public class SampleIapManager {
     /**
      * Method to set the app's amazon user id and marketplace from IAP SDK
      * responses.
-     * 
+     *
      * @param newAmazonUserId
      * @param newAmazonMarketplace
      */
-    public void setAmazonUserId(final String newAmazonUserId, final String newAmazonMarketplace) {
+    public void setAmazonUserId(final String newAmazonUserId, final String newAmazonMarketplace)
+    {
         // Reload everything if the Amazon user has changed.
-        if (newAmazonUserId == null) {
+        if (newAmazonUserId == null)
+        {
             // A null user id typically means there is no registered Amazon
             // account.
-            if (userIapData != null) {
+            if (userIapData != null)
+            {
                 userIapData = null;
                 refreshLevel2Availability();
             }
-        } else if (userIapData == null || !newAmazonUserId.equals(userIapData.getAmazonUserId())) {
+        } else if (userIapData == null || !newAmazonUserId.equals(userIapData.getAmazonUserId()))
+        {
             // If there was no existing Amazon user then either no customer was
             // previously registered or the application has just started.
 
@@ -120,24 +134,37 @@ public class SampleIapManager {
         }
     }
 
+    public String getUserMarketPlace()
+    {
+        return userIapData.getAmazonMarketplace();
+    }
+
     /**
      * Allow the customer to buy Level2 product.
-     * 
+     *
      * @param productData
      */
-    public void enablePurchaseForSkus(final Map<String, Product> productData) {
-        if (productData.containsKey(MySku.LEVEL2.getSku())) {
+    public void enablePurchaseForSkus(final Map<String, Product> productData)
+    {
+        if (productData.containsKey(MySku.LEVEL2.getSku()))
+        {
             level2ProductAvailable = true;
+        }
+        if(productData.containsKey(MySku.LEVEL2_JP.getAvailableMarketplace()))
+        {
+
         }
     }
 
     /**
      * Disallow purchase for Level2 product.
-     * 
+     *
      * @param unavailableSkus
      */
-    public void disablePurchaseForSkus(final Set<String> unavailableSkus) {
-        if (unavailableSkus.contains(MySku.LEVEL2.toString())) {
+    public void disablePurchaseForSkus(final Set<String> unavailableSkus)
+    {
+        if (unavailableSkus.contains(MySku.LEVEL2.toString()))
+        {
             level2ProductAvailable = false;
             // A product can be unavailable for the following reasonses:
             // * Item not available for this country
@@ -149,50 +176,58 @@ public class SampleIapManager {
 
     /**
      * Method to handle receipts
-     * 
+     *
      * @param requestId
      * @param receipt
      * @param userData
      */
-    public void handleReceipt(final String requestId, final Receipt receipt, final UserData userData) {
-        switch (receipt.getProductType()) {
-        case CONSUMABLE:
-            // check consumable sample for how to handle consumable purchases
-            break;
-        case ENTITLED:
-            handleEntitlementPurchase(receipt, userData);
-            break;
-        case SUBSCRIPTION:
-            // check subscription sample for how to handle consumable purchases
-            break;
+    public void handleReceipt(final String requestId, final Receipt receipt, final UserData userData)
+    {
+        switch (receipt.getProductType())
+        {
+            case CONSUMABLE:
+                // check consumable sample for how to handle consumable purchases
+                break;
+            case ENTITLED:
+                handleEntitlementPurchase(receipt, userData);
+                break;
+            case SUBSCRIPTION:
+                // check subscription sample for how to handle consumable purchases
+                break;
         }
 
     }
 
     /**
      * Show purchase failed message
+     *
      * @param sku
      */
-    public void purchaseFailed(final String sku) {
+    public void purchaseFailed(final String sku)
+    {
         mainActivity.showMessage("Purchase failed!");
     }
 
-    public UserIapData getUserIapData() {
+    public UserIapData getUserIapData()
+    {
         return this.userIapData;
     }
 
-    public boolean isLevel2ProductAvailable() {
+    public boolean isLevel2ProductAvailable()
+    {
         return level2ProductAvailable;
     }
 
-    public void setLevel2ProductAvailable(final boolean level2ProductAvailable) {
+    public void setLevel2ProductAvailable(final boolean level2ProductAvailable)
+    {
         this.level2ProductAvailable = level2ProductAvailable;
     }
 
     /**
      * Disable all purchases on UI
      */
-    public void disableAllPurchases() {
+    public void disableAllPurchases()
+    {
         this.setLevel2ProductAvailable(false);
         refreshLevel2Availability();
     }
@@ -201,11 +236,13 @@ public class SampleIapManager {
      * Reload the customer's purchase record from database, and check the Level2
      * product's availability based on the customer's purchase records.
      */
-    public void refreshLevel2Availability() {
+    public void refreshLevel2Availability()
+    {
         boolean level2Purchased = false;
-        if (userIapData != null) {
+        if (userIapData != null)
+        {
             final EntitlementRecord entitlementRecord = dataSource.getLatestEntitlementRecordBySku(userIapData
-                .getAmazonUserId(), MySku.LEVEL2.getSku());
+                    .getAmazonUserId(), MySku.LEVEL2.getSku());
             // Make sure the entitlement purchase record is not expired or
             // canceled
             level2Purchased = (EntitlementRecord.DATE_NOT_SET == entitlementRecord.cancelDate);
@@ -217,19 +254,18 @@ public class SampleIapManager {
     /**
      * Gracefully close the database when the main activity's onStop and
      * onDestroy
-     * 
      */
-    public void deactivate() {
+    public void deactivate()
+    {
         dataSource.close();
-
     }
 
     /**
      * Connect to the database when main activity's onStart and onResume
      */
-    public void activate() {
+    public void activate()
+    {
         dataSource.open();
-
     }
 
     /**
@@ -237,29 +273,33 @@ public class SampleIapManager {
      * purchase based on the receipt received from InAppPurchase SDK's
      * {@link PurchasingListener#onPurchaseResponse} or
      * {@link PurchasingListener#onPurchaseUpdates} method.
-     * 
-     * 
-     * @param receiptId
+     *
+     * @param receipt
      * @param userData
      */
-    private void grantEntitlementPurchase(final Receipt receipt, final UserData userData) {
+    private void grantEntitlementPurchase(final Receipt receipt, final UserData userData)
+    {
         final MySku mySku = MySku.fromSku(receipt.getSku(), userIapData.getAmazonMarketplace());
         // Verify that the SKU is still applicable.
-        if (mySku != MySku.LEVEL2) {
+        if (mySku != MySku.LEVEL2)
+        {
             Log.w(TAG, "The SKU [" + receipt.getSku() + "] in the receipt is not valid anymore ");
             // if the sku is not applicable anymore, call
             // PurchasingService.notifyFulfillment with status "UNAVAILABLE"
             PurchasingService.notifyFulfillment(receipt.getReceiptId(), FulfillmentResult.UNAVAILABLE);
             return;
         }
-        try {
+        try
+        {
             // Actual entitlement granting logic: Save the entitlement purchase
             // record to database so it can be loaded by
             // refreshLevel2Availability() method later,
             // then notify Amazon Appstore.
             saveEntitlementPurchase(receipt, userData.getUserId());
             PurchasingService.notifyFulfillment(receipt.getReceiptId(), FulfillmentResult.FULFILLED);
-        } catch (final Throwable e) {
+        }
+        catch (final Throwable e)
+        {
             // If for any reason the app is not able to fulfill the purchase,
             // add your own error handling code here.
             Log.e(TAG, "Failed to grant entitlement purchase, with error " + e.getMessage());
@@ -270,15 +310,15 @@ public class SampleIapManager {
      * We strongly recommend that you verify the receipt server-side The server
      * side verification ideally should include checking with Amazon RVS
      * (Receipt Verification Service) to verify the receipt details.
-     * 
-     * @see <a href=
-     *      "https://developer.amazon.com/appsandservices/apis/earn/in-app-purchasing/docs/rvs"
-     *      >Appstore's Receipt Verification Service</a>
-     * 
+     *
      * @param receiptId
      * @return
+     * @see <a href=
+     * "https://developer.amazon.com/appsandservices/apis/earn/in-app-purchasing/docs/rvs"
+     * >Appstore's Receipt Verification Service</a>
      */
-    private boolean verifyReceiptFromYourService(final String receiptId, final UserData userData) {
+    private boolean verifyReceiptFromYourService(final String receiptId, final UserData userData)
+    {
         // TODO Add your own server side accessing and verification code
         return true;
     }
@@ -286,16 +326,17 @@ public class SampleIapManager {
     /**
      * This sample app includes a simple SQLite implementation for save
      * Entitlement purchases locally.
-     * 
+     * <p>
      * We strongly recommend that you save purchase information on a server.
-     * 
+     * <p>
      * Use Receipt.isCanceled() to determine whether the receipt is in a
      * "CANCELED" state
-     * 
+     *
      * @param receipt
      * @param userId
      */
-    private void saveEntitlementPurchase(final Receipt receipt, final String userId) {
+    private void saveEntitlementPurchase(final Receipt receipt, final String userId)
+    {
         // TODO replace with your own implementation
         final long purchaseDate = receipt.getPurchaseDate() != null ? receipt.getPurchaseDate().getTime()
                 : EntitlementRecord.DATE_NOT_SET;
@@ -303,29 +344,34 @@ public class SampleIapManager {
         final long cancelDate = receipt.isCanceled() ? receipt.getCancelDate().getTime()
                 : EntitlementRecord.DATE_NOT_SET;
         dataSource.insertOrUpdateEntitlementRecord(receipt.getReceiptId(),
-                                                   userId,
-                                                   receipt.getSku(),
-                                                   purchaseDate,
-                                                   cancelDate);
+                userId,
+                receipt.getSku(),
+                purchaseDate,
+                cancelDate);
 
     }
 
     /**
      * Method to handle Entitlement Purchase
-     * 
+     *
      * @param receipt
      * @param userData
      */
-    private void handleEntitlementPurchase(final Receipt receipt, final UserData userData) {
-        try {
-            if (receipt.isCanceled()) {
+    private void handleEntitlementPurchase(final Receipt receipt, final UserData userData)
+    {
+        try
+        {
+            if (receipt.isCanceled())
+            {
                 // Check whether this receipt is to revoke a entitlement
                 // purchase
                 revokeEntitlement(receipt, userData.getUserId());
-            } else {
+            } else
+            {
                 // We strongly recommend that you verify the receipt
                 // server-side.
-                if (!verifyReceiptFromYourService(receipt.getReceiptId(), userData)) {
+                if (!verifyReceiptFromYourService(receipt.getReceiptId(), userData))
+                {
                     // if the purchase cannot be verified,
                     // show relevant error message to the customer.
                     mainActivity.showMessage("Purchase cannot be verified, please retry later.");
@@ -334,7 +380,9 @@ public class SampleIapManager {
                 grantEntitlementPurchase(receipt, userData);
             }
             return;
-        } catch (final Throwable e) {
+        }
+        catch (final Throwable e)
+        {
             mainActivity.showMessage("Purchase cannot be completed, please retry");
         }
 
@@ -342,34 +390,39 @@ public class SampleIapManager {
 
     /**
      * Private method to revoke an entitlement purchase from the customer
-     * 
+     * <p>
      * Please implement your application-specific logic to handle the revocation
      * of an entitlement purchase.
-     * 
-     * 
+     *
      * @param receipt
      * @param userId
      */
-    private void revokeEntitlement(final Receipt receipt, final String userId) {
+    private void revokeEntitlement(final Receipt receipt, final String userId)
+    {
         String receiptId = receipt.getReceiptId();
         final EntitlementRecord record;
-        if (receiptId == null) {
+        if (receiptId == null)
+        {
             // The revoked receipt's receipt id may be null on older devices.
             record = dataSource.getLatestEntitlementRecordBySku(userId, receipt.getSku());
             receiptId = record.getReceiptId();
-        } else {
+        } else
+        {
             record = dataSource.getEntitlementRecordByReceiptId(receiptId);
         }
-        if (record == null) {
+        if (record == null)
+        {
             // No purchase record for the entitlement before, do nothing.
             return;
         }
         if (record.getCancelDate() == EntitlementRecord.DATE_NOT_SET || record.getCancelDate() > System
-                .currentTimeMillis()) {
+                .currentTimeMillis())
+        {
             final long cancelDate = receipt.getCancelDate() != null ? receipt.getCancelDate().getTime() : System
-                .currentTimeMillis();
+                    .currentTimeMillis();
             dataSource.cancelEntitlement(receiptId, cancelDate);
-        } else {
+        } else
+        {
             // Already canceled, do nothing
             return;
         }

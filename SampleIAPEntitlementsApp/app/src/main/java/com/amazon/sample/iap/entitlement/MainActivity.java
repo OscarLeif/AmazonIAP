@@ -96,7 +96,22 @@ public class MainActivity extends Activity
      */
     public void onBuyAccessToLevel2Click(final View view)
     {
-        final RequestId requestId = PurchasingService.purchase(MySku.LEVEL2.getSku());
+        String userMarketPlace= sampleIapManager.getUserMarketPlace();
+
+        MySku findSku = null;
+
+        final Set<String> productSkus = new HashSet<String>();
+        for (final MySku mySku : MySku.values())
+        {
+            //productSkus.add(mySku.getSku());
+            if(mySku.getAvailableMarketplace().equals(userMarketPlace))
+            {
+                findSku = mySku;
+            }
+        }
+        //Null could be happen
+        //final RequestId requestId = PurchasingService.purchase(MySku.LEVEL2.getSku());
+        final RequestId requestId = PurchasingService.purchase(findSku.getSku());
         Log.d(TAG, "onBuyAccessToLevel2Click: requestId (" + requestId + ")");
     }
 
@@ -105,7 +120,7 @@ public class MainActivity extends Activity
     // ////////////////////////////
     // ///////////////////////////////////////////////////////////////////////////////////////
 
-    private static final String TAG = "SampleIAPEntitlementsApp";
+    private static final String TAG = "SampleIAPEntitlements";
 
     private Handler guiThreadHandler;
 
