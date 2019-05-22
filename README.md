@@ -1,7 +1,5 @@
 # AmazonIAP
 Basic Amazon IAP Example here they're working
 
-
-
-While the official was created to use Eclipse.
-
+* SampleIAPEntitlementsApp [Amazon Original example working on Android Studio]
+* AmazonIAP [Custom example working ]
