@@ -1,18 +1,18 @@
-package com.amazon.sample.iap.entitlement;
+package ata.games.amazon.amazoniap;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.util.Log;
 
-import com.amazon.sample.iap.entitlement.IapManager.EntitlementRecord;
-
+import ata.games.amazon.amazoniap.IapManager.EntitlementRecord;
 /**
  * DAO class for sample purchase data
- * 
- * 
+ *
+ *
  */
 public class EntitlementsDataSource {
 
@@ -43,14 +43,14 @@ public class EntitlementsDataSource {
         entitlementRecord.setUserId(cursor.getString(cursor.getColumnIndex(SampleSQLiteHelper.COLUMN_USER_ID)));
         entitlementRecord.setSku(cursor.getString(cursor.getColumnIndex(SampleSQLiteHelper.COLUMN_SKU)));
         entitlementRecord
-            .setPurchaseDate(cursor.getLong(cursor.getColumnIndex(SampleSQLiteHelper.COLUMN_PURCHASE_DATE)));
+                .setPurchaseDate(cursor.getLong(cursor.getColumnIndex(SampleSQLiteHelper.COLUMN_PURCHASE_DATE)));
         entitlementRecord.setCancelDate(cursor.getLong(cursor.getColumnIndex(SampleSQLiteHelper.COLUMN_CANCEL_DATE)));
         return entitlementRecord;
     }
 
     /**
      * Return the entitlement for given user and sku
-     * 
+     *
      * @param userId
      * @param sku
      * @return
@@ -76,7 +76,7 @@ public class EntitlementsDataSource {
     }
     /**
      * Insert or update the entitlement records table with specified receipt id as primary key.
-     *  
+     *
      * @param receiptId
      * @param userId
      * @param sku
@@ -84,23 +84,23 @@ public class EntitlementsDataSource {
      * @param cancelDate
      */
     public void insertOrUpdateEntitlementRecord(final String receiptId,
-            final String userId,
-            final String sku,
-            final long purchaseDate,
-            final long cancelDate) {
+                                                final String userId,
+                                                final String sku,
+                                                final long purchaseDate,
+                                                final long cancelDate) {
 
         Log.d(TAG, "insertOrUpdateEntitlementRecord: receiptId (" + receiptId + "),userId (" + userId + ")");
         final String where = SampleSQLiteHelper.COLUMN_RECEIPT_ID + " = ? and "
-                             + SampleSQLiteHelper.COLUMN_CANCEL_DATE
-                             + " > 0";
+                + SampleSQLiteHelper.COLUMN_CANCEL_DATE
+                + " > 0";
 
         final Cursor cursor = database.query(SampleSQLiteHelper.TABLE_ENTITLEMENTS,
-                                             allColumns,
-                                             where,
-                                             new String[] { receiptId },
-                                             null,
-                                             null,
-                                             null);
+                allColumns,
+                where,
+                new String[] { receiptId },
+                null,
+                null,
+                null);
         final int count = cursor.getCount();
         cursor.close();
         if (count > 0) {
@@ -117,9 +117,9 @@ public class EntitlementsDataSource {
             values.put(SampleSQLiteHelper.COLUMN_PURCHASE_DATE, purchaseDate);
             values.put(SampleSQLiteHelper.COLUMN_CANCEL_DATE, cancelDate);
             database.insertWithOnConflict(SampleSQLiteHelper.TABLE_ENTITLEMENTS,
-                                          null,
-                                          values,
-                                          SQLiteDatabase.CONFLICT_REPLACE);
+                    null,
+                    values,
+                    SQLiteDatabase.CONFLICT_REPLACE);
         }
     }
 
@@ -134,12 +134,12 @@ public class EntitlementsDataSource {
 
         final String where = SampleSQLiteHelper.COLUMN_RECEIPT_ID + "= ?";
         final Cursor cursor = database.query(SampleSQLiteHelper.TABLE_ENTITLEMENTS,
-                                             allColumns,
-                                             where,
-                                             new String[] { receiptId },
-                                             null,
-                                             null,
-                                             null);
+                allColumns,
+                where,
+                new String[] { receiptId },
+                null,
+                null,
+                null);
         final EntitlementRecord result;
         cursor.moveToFirst();
         if (cursor.isAfterLast()) {
@@ -166,9 +166,9 @@ public class EntitlementsDataSource {
         final ContentValues values = new ContentValues();
         values.put(SampleSQLiteHelper.COLUMN_CANCEL_DATE, cancelDate);
         final int updated = database.update(SampleSQLiteHelper.TABLE_ENTITLEMENTS,
-                                            values,
-                                            where,
-                                            new String[] { receiptId });
+                values,
+                where,
+                new String[] { receiptId });
         Log.d(TAG, "cancelEntitlement: updated " + updated);
         return updated > 0;
 

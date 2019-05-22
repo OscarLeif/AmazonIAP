@@ -1,8 +1,6 @@
-package com.amazon.sample.iap.entitlement;
+package ata.games.amazon.amazoniap;
 
-import java.util.Map;
-import java.util.Set;
-
+import android.app.Activity;
 import android.util.Log;
 
 import com.amazon.device.iap.PurchasingListener;
@@ -11,6 +9,9 @@ import com.amazon.device.iap.model.FulfillmentResult;
 import com.amazon.device.iap.model.Product;
 import com.amazon.device.iap.model.Receipt;
 import com.amazon.device.iap.model.UserData;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * This is a sample of how an application may handle InAppPurchasing. The major
@@ -22,7 +23,7 @@ import com.amazon.device.iap.model.UserData;
  * <li>Save persistent order data into SQLite Database</li>
  * </ul>
  */
-public class SampleIapManager
+public class IapManager
 {
     /**
      * The EntitlementRecord class represents a Entitlement purchase record that
@@ -96,7 +97,7 @@ public class SampleIapManager
     private UserIapData userIapData;
     final private EntitlementsDataSource dataSource;
 
-    public SampleIapManager(final MainActivity mainActivity)
+    public IapManager(final MainActivity mainActivity)
     {
         this.mainActivity = mainActivity;
         dataSource = new EntitlementsDataSource(mainActivity.getApplicationContext());
@@ -146,14 +147,14 @@ public class SampleIapManager
      */
     public void enablePurchaseForSkus(final Map<String, Product> productData)
     {
-        if (productData.containsKey(MySku.LEVEL2.getSku()))
+        /*if (productData.containsKey(MySku.LEVEL2.getSku()))
         {
             level2ProductAvailable = true;
         }
         if(productData.containsKey(MySku.LEVEL2_JP.getAvailableMarketplace()))
         {
 
-        }
+        }*/
     }
 
     /**
@@ -163,14 +164,14 @@ public class SampleIapManager
      */
     public void disablePurchaseForSkus(final Set<String> unavailableSkus)
     {
-        if (unavailableSkus.contains(MySku.LEVEL2.toString()))
+        //if (unavailableSkus.contains(MySku.LEVEL2.toString()))
         {
-            level2ProductAvailable = false;
+            // level2ProductAvailable = false;
             // A product can be unavailable for the following reasonses:
             // * Item not available for this country
             // * Item pulled off from Appstore by developer
             // * Item pulled off from Appstore by Amazon
-            mainActivity.showMessage("the level2 product isn't available now! ");
+            // TODO Update mainActivity.showMessage("the level2 product isn't available now! ");
         }
     }
 
@@ -205,7 +206,8 @@ public class SampleIapManager
      */
     public void purchaseFailed(final String sku)
     {
-        mainActivity.showMessage("Purchase failed!");
+        //TODO Update to TOAST mainActivity.showMessage("Purchase failed!");
+
     }
 
     public UserIapData getUserIapData()
@@ -241,15 +243,27 @@ public class SampleIapManager
         boolean level2Purchased = false;
         if (userIapData != null)
         {
-            final EntitlementRecord entitlementRecord = dataSource.getLatestEntitlementRecordBySku(userIapData
-                    .getAmazonUserId(), MySku.LEVEL2.getSku());
+            //final EntitlementRecord entitlementRecord = dataSource.getLatestEntitlementRecordBySku(userIapData
+            //      .getAmazonUserId(), MySku.LEVEL2.getSku());
             // Make sure the entitlement purchase record is not expired or
             // canceled
-            level2Purchased = (EntitlementRecord.DATE_NOT_SET == entitlementRecord.cancelDate);
+            //level2Purchased = (EntitlementRecord.DATE_NOT_SET == entitlementRecord.cancelDate);
         }
 
-        mainActivity.setLevel2Availbility(level2ProductAvailable, level2Purchased);
+        //TODO Update mainActivity.setLevel2Availbility(level2ProductAvailable, level2Purchased);
     }
+
+    public boolean IsSkuOwned(String Sku)
+    {
+        if(userIapData!=null)
+        {
+            final EntitlementRecord entitlementRecord = dataSource.getLatestEntitlementRecordBySku(userIapData
+                    .getAmazonUserId(), Sku);
+            return true;
+        }
+        return false;
+    }
+
 
     /**
      * Gracefully close the database when the main activity's onStop and
@@ -272,7 +286,7 @@ public class SampleIapManager
      * This method contains the business logic to fulfill the customer's
      * purchase based on the receipt received from InAppPurchase SDK's
      * {@link PurchasingListener#onPurchaseResponse} or
-     * {@link PurchasingListener#onPurchaseUpdates} method.
+     * {@link PurchasingListener#onPurchaseUpdatesResponse} method.
      *
      * @param receipt
      * @param userData
@@ -281,14 +295,15 @@ public class SampleIapManager
     {
         final MySku mySku = MySku.fromSku(receipt.getSku(), userIapData.getAmazonMarketplace());
         // Verify that the SKU is still applicable.
-        if (mySku != MySku.LEVEL2)
+        // TODO Check on all IAP
+        /*if (mySku != MySku.LEVEL2)
         {
             Log.w(TAG, "The SKU [" + receipt.getSku() + "] in the receipt is not valid anymore ");
             // if the sku is not applicable anymore, call
             // PurchasingService.notifyFulfillment with status "UNAVAILABLE"
             PurchasingService.notifyFulfillment(receipt.getReceiptId(), FulfillmentResult.UNAVAILABLE);
             return;
-        }
+        }*/
         try
         {
             // Actual entitlement granting logic: Save the entitlement purchase
@@ -297,8 +312,7 @@ public class SampleIapManager
             // then notify Amazon Appstore.
             saveEntitlementPurchase(receipt, userData.getUserId());
             PurchasingService.notifyFulfillment(receipt.getReceiptId(), FulfillmentResult.FULFILLED);
-        }
-        catch (final Throwable e)
+        } catch (final Throwable e)
         {
             // If for any reason the app is not able to fulfill the purchase,
             // add your own error handling code here.
@@ -374,16 +388,15 @@ public class SampleIapManager
                 {
                     // if the purchase cannot be verified,
                     // show relevant error message to the customer.
-                    mainActivity.showMessage("Purchase cannot be verified, please retry later.");
+                    //TODO UPDATE mainActivity.showMessage("Purchase cannot be verified, please retry later.");
                     return;
                 }
                 grantEntitlementPurchase(receipt, userData);
             }
             return;
-        }
-        catch (final Throwable e)
+        } catch (final Throwable e)
         {
-            mainActivity.showMessage("Purchase cannot be completed, please retry");
+            //TODO Update mainActivity.showMessage("Purchase cannot be completed, please retry");
         }
 
     }

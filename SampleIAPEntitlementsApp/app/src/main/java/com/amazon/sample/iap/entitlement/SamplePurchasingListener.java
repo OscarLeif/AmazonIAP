@@ -22,9 +22,9 @@ public class SamplePurchasingListener implements PurchasingListener
 {
     private static final String TAG = "SampleIAPEntitlements";
 
-    private final SampleIapManager iapManager;
+    private final IapManager iapManager;
 
-    public SamplePurchasingListener(final SampleIapManager iapManager)
+    public SamplePurchasingListener(final IapManager iapManager)
     {
         this.iapManager = iapManager;
     }

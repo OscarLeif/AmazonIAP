@@ -21,7 +21,7 @@ import com.amazon.device.iap.model.RequestId;
  */
 public class MainActivity extends Activity
 {
-    private SampleIapManager sampleIapManager;
+    private IapManager iapManager;
 
     /**
      * Setup IAP SDK and other UI related objects specific to this sample
@@ -36,17 +36,16 @@ public class MainActivity extends Activity
     }
 
     /**
-     * Setup for IAP SDK called from onCreate. Sets up {@link SampleIapManager}
+     * Setup for IAP SDK called from onCreate. Sets up {@link IapManager}
      * to handle InAppPurchasing logic and {@link SamplePurchasingListener} for
      * listening to IAP API callbacks
      */
     private void setupIAPOnCreate()
     {
-        sampleIapManager = new SampleIapManager(this);
-        final SamplePurchasingListener purchasingListener = new SamplePurchasingListener(sampleIapManager);
+        iapManager = new IapManager(this);
+        final SamplePurchasingListener purchasingListener = new SamplePurchasingListener(iapManager);
         Log.d(TAG, "onCreate: registering PurchasingListener");
         PurchasingService.registerListener(this.getApplicationContext(), purchasingListener);
-
     }
 
     /**
@@ -74,7 +73,7 @@ public class MainActivity extends Activity
     protected void onResume()
     {
         super.onResume();
-        sampleIapManager.activate();
+        iapManager.activate();
         Log.d(TAG, "onResume: call getUserData");
         PurchasingService.getUserData();
 
@@ -86,7 +85,7 @@ public class MainActivity extends Activity
     protected void onPause()
     {
         super.onPause();
-        sampleIapManager.deactivate();
+        iapManager.deactivate();
     }
 
     /**
@@ -96,7 +95,7 @@ public class MainActivity extends Activity
      */
     public void onBuyAccessToLevel2Click(final View view)
     {
-        String userMarketPlace= sampleIapManager.getUserMarketPlace();
+        String userMarketPlace = iapManager.getUserMarketPlace();
 
         MySku findSku = null;
 
@@ -104,7 +103,7 @@ public class MainActivity extends Activity
         for (final MySku mySku : MySku.values())
         {
             //productSkus.add(mySku.getSku());
-            if(mySku.getAvailableMarketplace().equals(userMarketPlace))
+            if (mySku.getAvailableMarketplace().equals(userMarketPlace))
             {
                 findSku = mySku;
             }
@@ -243,6 +242,13 @@ public class MainActivity extends Activity
             disableLevel2InView();
             disableBuyLevel2Button();
         }
+    }
 
+    public boolean isProductPruchased()
+    {
+        boolean isPurchase = false;
+
+
+        return isPurchase;
     }
 }

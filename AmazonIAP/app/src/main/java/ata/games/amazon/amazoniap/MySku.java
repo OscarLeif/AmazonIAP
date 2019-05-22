@@ -1,4 +1,4 @@
-package com.amazon.sample.iap.entitlement;
+package ata.games.amazon.amazoniap;
 
 /**
  * MySku enum contains all In App Purchase products definition that the sample
@@ -8,7 +8,8 @@ package com.amazon.sample.iap.entitlement;
 public enum MySku
 {
     // The only entitlement product used in this sample app
-    LEVEL2("FullGame", "US"),
+    LEVEL2_US("FullGame", "US"),
+    // We have two one for the US market and other fot the JP market.
     LEVEL2_JP("com.amazon.sample.iap.entitlement.level2", "JP");
 
     private final String sku;
@@ -23,9 +24,9 @@ public enum MySku
      */
     public static MySku fromSku(final String sku, final String marketplace)
     {
-        if (LEVEL2.getSku().equals(sku) && (marketplace == null || LEVEL2.getAvailableMarketplace().equalsIgnoreCase(marketplace)))
+        if (LEVEL2_US.getSku().equals(sku) && (marketplace == null || LEVEL2_US.getAvailableMarketplace().equalsIgnoreCase(marketplace)))
         {
-            return LEVEL2;
+            return LEVEL2_US;
         }
         return null;
     }
