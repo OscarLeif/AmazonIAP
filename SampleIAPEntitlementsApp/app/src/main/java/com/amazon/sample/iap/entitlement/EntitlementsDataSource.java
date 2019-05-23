@@ -37,6 +37,11 @@ public class EntitlementsDataSource {
         dbHelper.close();
     }
 
+    public void clean()
+    {
+        database.delete(SampleSQLiteHelper.TABLE_ENTITLEMENTS,null,null);
+    }
+
     private EntitlementRecord cursorToEntitlementRecord(final Cursor cursor) {
         final EntitlementRecord entitlementRecord = new EntitlementRecord();
         entitlementRecord.setReceiptId(cursor.getString(cursor.getColumnIndex(SampleSQLiteHelper.COLUMN_RECEIPT_ID)));

@@ -117,6 +117,10 @@ public class SamplePurchasingListener implements PurchasingListener {
             if (response.hasMore()) {
                 PurchasingService.getPurchaseUpdates(false);
             }
+            if(response.getReceipts().size()==0)
+            {
+                iapManager.cleanDb();
+            }
             iapManager.refreshLevel2Availability();
 
             break;

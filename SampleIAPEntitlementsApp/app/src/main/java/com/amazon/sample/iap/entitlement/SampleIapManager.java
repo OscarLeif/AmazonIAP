@@ -25,6 +25,8 @@ import com.amazon.device.iap.model.UserData;
  * 
  */
 public class SampleIapManager {
+
+
     /**
      * The EntitlementRecord class represents a Entitlement purchase record that
      * used by the Entitlement Sample App
@@ -208,11 +210,25 @@ public class SampleIapManager {
                 .getAmazonUserId(), MySku.LEVEL2.getSku());
             // Make sure the entitlement purchase record is not expired or
             // canceled
-            level2Purchased = (EntitlementRecord.DATE_NOT_SET == entitlementRecord.cancelDate);
+            if(entitlementRecord!=null)
+                level2Purchased = (EntitlementRecord.DATE_NOT_SET == entitlementRecord.cancelDate);
         }
 
         mainActivity.setLevel2Availbility(level2ProductAvailable, level2Purchased);
     }
+
+    public boolean isSkuOwned(String skuId)
+    {
+        if (userIapData != null)
+        {
+            final EntitlementRecord entitlementRecord = dataSource.getLatestEntitlementRecordBySku(userIapData
+                    .getAmazonUserId(), MySku.LEVEL2.getSku());
+            if(entitlementRecord!=null)
+                return true;
+        }
+        return false;
+    }
+
 
     /**
      * Gracefully close the database when the main activity's onStop and
@@ -230,6 +246,11 @@ public class SampleIapManager {
     public void activate() {
         dataSource.open();
 
+    }
+
+    public void cleanDb()
+    {
+        dataSource.clean();
     }
 
     /**

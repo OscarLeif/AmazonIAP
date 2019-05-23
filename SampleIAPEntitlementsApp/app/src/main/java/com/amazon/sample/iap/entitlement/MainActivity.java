@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
         PurchasingService.getUserData();
 
         Log.d(TAG, "onResume: getPurchaseUpdates");
-        PurchasingService.getPurchaseUpdates(true);
+        PurchasingService.getPurchaseUpdates(false);
     }
 
     @Override
@@ -90,6 +90,10 @@ public class MainActivity extends Activity {
     public void onBuyAccessToLevel2Click(final View view) {
         final RequestId requestId = PurchasingService.purchase(MySku.LEVEL2.getSku());
 
+        if(sampleIapManager.isSkuOwned(MySku.LEVEL2.getSku()))
+        {
+
+        }
         Log.d(TAG, "onBuyAccessToLevel2Click: requestId (" + requestId + ")");
     }
 

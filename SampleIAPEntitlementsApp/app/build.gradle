@@ -1,20 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 17
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.amazon.sample.iap.entitlement"
-        minSdkVersion 17
-        targetSdkVersion 27
+        minSdkVersion 10
+        targetSdkVersion 17
     }
-
-    dependencies
-            {
-                implementation files('./libs/in-app-purchasing-2.0.76.jar')
-            }
-
 
     buildTypes {
         release {
@@ -22,4 +16,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    dependencies
+            {
+                implementation files('./libs/in-app-purchasing-2.0.76.jar')
+            }
 }
