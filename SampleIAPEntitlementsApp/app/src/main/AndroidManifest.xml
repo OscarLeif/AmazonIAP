@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.amazon.device.iap.ResponseReceiver" >
+        <receiver android:name="com.amazon.device.iap.ResponseReceiver">
             <intent-filter>
                 <action
                     android:name="com.amazon.inapp.purchasing.NOTIFY"

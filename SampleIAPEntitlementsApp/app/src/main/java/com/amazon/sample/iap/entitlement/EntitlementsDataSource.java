@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.amazon.sample.iap.entitlement.IapManager.EntitlementRecord;
+import com.amazon.sample.iap.entitlement.SampleIapManager.EntitlementRecord;
 
 /**
  * DAO class for sample purchase data
