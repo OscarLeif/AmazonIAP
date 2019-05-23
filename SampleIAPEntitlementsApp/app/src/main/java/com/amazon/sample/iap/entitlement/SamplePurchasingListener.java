@@ -119,7 +119,7 @@ public class SamplePurchasingListener implements PurchasingListener {
             }
             if(response.getReceipts().size()==0)
             {
-                iapManager.cleanDb();
+                //iapManager.cleanDb();
             }
             iapManager.refreshLevel2Availability();
 
