@@ -1,1 +1,0 @@
-adb push amazon.sdktester.json /mnt/sdcard/amazon.sdktester.json

@@ -1,1 +1,0 @@
-adb uninstall com.amazon.sample.iap.entitlement
