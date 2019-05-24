@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\OscarLeif\\AndroidStudioProjects\\SampleIAPEntitlementsApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\OscarLeif\\Documents\\AmazonIAP\\SampleIAPEntitlementsApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\OscarLeif\\AndroidStudioProjects\\SampleIAPEntitlementsApp\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\OscarLeif\\Documents\\AmazonIAP\\SampleIAPEntitlementsApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,6,7,8,5",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "121,58,229,300,361,175",
+                        "endColumns": "52,61,70,60,58,52",
+                        "endOffsets": "169,115,295,356,415,223"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "169,222,284,355,416,475",
+                        "endColumns": "52,61,70,60,58,52",
+                        "endOffsets": "217,279,350,411,470,523"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\OscarLeif\\Documents\\AmazonIAP\\SampleIAPEntitlementsApp\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "6,15",
                         "startColumns": "4,4",
@@ -23,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\OscarLeif\\AndroidStudioProjects\\SampleIAPEntitlementsApp\\app\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\OscarLeif\\Documents\\AmazonIAP\\SampleIAPEntitlementsApp\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
                         "startLines": "3,4",
                         "startColumns": "4,4",
@@ -37,23 +54,6 @@
                         "startOffsets": "55,113",
                         "endColumns": "57,55",
                         "endOffsets": "108,164"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\OscarLeif\\AndroidStudioProjects\\SampleIAPEntitlementsApp\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,6,7,8,5",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "121,58,229,300,361,175",
-                        "endColumns": "52,61,70,60,58,52",
-                        "endOffsets": "169,115,295,356,415,223"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "169,222,284,355,416,475",
-                        "endColumns": "52,61,70,60,58,52",
-                        "endOffsets": "217,279,350,411,470,523"
                     }
                 }
             ]

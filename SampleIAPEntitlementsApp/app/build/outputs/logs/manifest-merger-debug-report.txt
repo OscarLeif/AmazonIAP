@@ -1,75 +1,75 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:3:5-48
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:5:5-30
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:4:5-28
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:7:5-29:19
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:7:5-29:19
 	android:label
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:10:9-41
 	android:icon
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:9:9-45
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:9:9-45
 	android:allowBackup
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.amazon.sample.iap.entitlement.MainActivity
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:12:9-20:20
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:12:9-20:20
 	android:label
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:14:13-45
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:14:13-45
 	android:name
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:13:13-74
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:13:13-74
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:18:27-74
 receiver#com.amazon.device.iap.ResponseReceiver
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:22:9-28:20
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:22:9-28:20
 	android:name
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:22:19-72
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:22:19-72
 intent-filter#action:name:com.amazon.inapp.purchasing.NOTIFY
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:23:13-27:29
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:23:13-27:29
 action#com.amazon.inapp.purchasing.NOTIFY
-ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:24:17-26:90
+ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:24:17-26:90
 	android:permission
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:26:21-87
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:26:21-87
 	android:name
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:25:21-70
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml:25:21-70
 uses-sdk
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\OscarLeif\AndroidStudioProjects\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\OscarLeif\Documents\AmazonIAP\SampleIAPEntitlementsApp\app\src\main\AndroidManifest.xml

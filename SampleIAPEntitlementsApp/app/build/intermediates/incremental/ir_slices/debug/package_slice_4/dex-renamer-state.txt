@@ -1,4 +1,0 @@
-#Thu May 23 09:25:50 COT 2019
-base.0=C\:\\Users\\OscarLeif\\AndroidStudioProjects\\SampleIAPEntitlementsApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
-path.0=classes.dex
-renamed.0=classes.dex
